@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - leopaul29</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+</head>
+
+<body>
+    <main>
+        <div class="main-carousel">
+            <div class="carousel-cell">
+                <div class="content" id="intro">
+                    <h1>Hello, I’m <span>leopaul29</span></h1>
+                    <!--START_SECTION:introduction-->
+                    <p>I am a full-stack software engineer from Nice, France. Developer and Traveller.</p>
+                    <ul>
+                        <li> 🌱 I’m currently exploring new things in technology.</li>
+                        <li> 🔭 I’m currently working with Java Spring.</li>
+                        <li> 📚 I'm planning to learn more about Flutter.</li>
+                        <li> 😄 Pronouns: he/him</li>
+                        <li> ⚡ I love to play guitar 🎸 and I'm learning japanese language 🏯</li>
+                    </ul>
+                    <!--END_SECTION:introduction-->
+                </div>
+            </div>
+
+            <div class="carousel-cell">
+                <div class="content" id="stack">
+                    <!--START_SECTION:techstack-->
+                    <h4> 👨‍💻 Technology Stack</h4>
+                    <p>
+                        <img height="180em"
+                            src="https://github-readme-stats.vercel.app/api/top-langs/?username=leopaul29&layout=compact&langs_count=8" />
+                    </p>
+                    <!--END_SECTION:techstack-->
+                    <!--START_SECTION:waka-->
+                    <h4> 📊 This Week I Spent My Time On</h4>
+                    <p>
+                        <img height="180em"
+                            src="https://github-readme-stats-taupe-two.vercel.app/api/wakatime?username=leopaul29&langs_count=5&count_private=true&hide_title=true" />
+                    </p>
+                    <!--END_SECTION:waka-->
+                </div>
+            </div>
+
+            <div class="carousel-cell">
+                <div class="content" id="stats">
+                    <!--START_SECTION:githubstats-->
+                    <h4> 📈 My GitHub Stats</h4>
+                    <div>
+                        <img height="180em"
+                            src="https://github-readme-stats.vercel.app/api?username=leopaul29&show_icons=true&hide_border=true&&count_private=true&include_all_commits=true" />
+                    </div>
+                    <div>
+                        <img height="180em"
+                            src="https://github-readme-streak-stats.herokuapp.com?user=leopaul29&hide_border=true&date_format=M%20j%5B%2C%20Y%5D" />
+                    </div>
+                    <!--END_SECTION:githubstats-->
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script>
+        var elem = document.querySelector('.main-carousel');
+        var flkty = new Flickity(elem, {
+            // options
+            cellAlign: 'center',
+            contain: true,
+            fullscreen: true,
+            autoPlay: true,
+            wrapAround: true
+        });
+    </script>
+</body>
+
+</html>
