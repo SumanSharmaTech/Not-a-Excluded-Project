@@ -1,0 +1,36 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}Welcome!{% endblock %}
+
+{% block body %}
+
+<center><h2 id="welcome">WELCOME TO THE HARRY POTTER AUCTIONS!</h2></center>
+<br>
+<center>
+<p class="hp" style="font-size: 28px;">As you can feel the HP-Auctions is created to auction our Harry Potter stuff online, so if anyone wants to sell their old harry potter stuff or rare collectibles then you
+    are welcome to do so OR if you are looking to buy some we have a lot of items getting listed every week!. </p>
+<br>
+<img src="https://cdn.shopify.com/s/files/1/0514/6332/3817/t/5/assets/hogwarts-crest-dark.png" alt="hogwarts-crest-dark">
+<br>
+{% if request.user.is_authenticated %}
+<h2 class="hr-style"><span>REGISTER</span></h2>
+{% else %}
+<a href="{% url 'register' %}" class="active"><h2 class="hr-style"><span>REGISTER</span></h2></a>
+{% endif %}
+<p style="font-size: 24px;">To:</p>
+<table id="register-list">
+    <tr>
+        <td>Add items to your Watchlist</td>
+        <td>Comment on listings</td>
+        <td>Place bid on listings</td>
+        <td>Create your own listings</td>
+    </tr>
+</table>
+<img src="https://cdn.shopify.com/s/files/1/0514/6332/3817/t/5/assets/ww-logo.svg" alt="wizarding world" style="max-width: 20px;">
+<h2 class="hr-style"><span>CONTACT US</span></h2></a><br><br>
+<h4>Email: HP-auctions@gmail.com</h4><br>
+<h4>Contact no: +91 9829-XXX-XXX</h4><br>
+<h4>Twitter: twitter.com/HarryPotterAuctions</h4><br>
+<h4>Instagram: instagram.com/HarryPotter_auctions</h4><br>
+</center>
+{% endblock %}

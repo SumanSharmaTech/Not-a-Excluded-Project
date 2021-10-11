@@ -1,0 +1,30 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}{{ category }}{% endblock %}
+
+{% block body %}
+<h3>Listings in {{ category }}</h3>
+<hr>
+{% for list in lists %}
+
+<table>
+<tr>
+    <td>
+    <a href="{% url 'listing' list.id %}">
+        <img src="{{ list.image }}" alt="{{ list.title }}">
+        
+    </a>
+    </td>
+    <td>
+        <a href="{% url 'listing' list.id %}" class="active">
+        <strong><p style="font-size: 28px;">{{ list.title }}</p><br>
+        Starting Bid: $</strong>{{ list.bid }}
+    </a><br><br>
+        <p class="desc">{{ list.description }}</p>
+    </td>
+</tr>
+</table>
+<hr>
+{% endfor %}
+
+{% endblock %}
