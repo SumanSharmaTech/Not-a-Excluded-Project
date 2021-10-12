@@ -1,0 +1,26 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}Create Listing{% endblock %}
+
+{% block body %}
+{% if message %}
+<div>{{ message }}</div>
+{% endif %}
+<h1>Create a Listing</h1>
+<hr>
+<form action="{% url 'create' %}" method="POST" id="list">
+    {% csrf_token %}
+    {{ form.title }}
+    <br>
+    <br> {{ form.description }}
+    <br><br>
+    {{ form.bid }}
+    <br><br>
+    {{ form.image }}
+    <br><br>
+    {{ form.category }}
+    <br><br>
+    <button type="submit" class="hog-btn">Create</button>
+</form>
+<br>
+{% endblock %}

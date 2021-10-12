@@ -1,0 +1,35 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h1>Watchlist</h1>
+
+    {% if watchlist %}
+
+        {% for watch in watchlist %}
+
+        <table>
+            <tr>
+                <td>
+                <a href="{% url 'listing' watch.listing.id %}">
+                    <img src="{{ watch.listing.image }}" alt="{{ watch.listing.title }}">
+                    
+                </a>
+                </td>
+                <td>
+                    <a href="{% url 'listing' watch.listing.id %}" class="active">
+                    <strong><p style="font-size: 28px;">{{ watch.listing.title }}</p><br>
+                    Starting Bid: $</strong>{{ watch.listing.bid }}
+                </a><br><br>
+                    <p class="cursive">{{ watch.listing.description }}</p>
+                </td>
+            </tr>
+            </table>
+            <hr>
+
+        {% endfor %}
+        {% else %}
+            <center>
+                <h2>Such empty x_x</h2>
+            </center>
+    {% endif %}
+{% endblock %}

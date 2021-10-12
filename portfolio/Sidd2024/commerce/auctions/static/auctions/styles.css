@@ -1,0 +1,149 @@
+html, body {
+    height: 100%;
+    margin: 0px;
+    color: #fcf5e7;
+    font-family: "bluu_nextbold", serif;
+    font-weight: 500;
+}
+#background {
+    height: 100%;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-attachment: scroll;
+    overflow-y: scroll;
+}
+img {
+    max-height: 200px;
+    min-width: 200px;
+    min-height: 200px;
+}
+#welcome {
+    font-size: 50px;
+    color: #ffa235;
+    font-family: 'Jolly Lodger', cursive;
+}
+.listing {
+    min-height: 500px;
+    max-height: 600px;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+td {
+    vertical-align: top; 
+}
+.cursive {
+    font-family: cursive;
+    color: whitesmoke;
+}
+.active:link {
+    color: #fcf5e7;
+}
+.active:visited {
+    color: #fcf5e7;
+}
+.active:hover {
+    color: #fcf5e7;
+}
+.active:active {
+    color: #fcf5e7;
+} 
+.watchlist {
+    color: ivory;
+    background-color: #740001;
+    border-radius: 5px;
+    padding: 3px;
+    box-shadow: none;
+    border-color: #740001;
+    font-size: 18px;
+}
+.watchlist:hover {
+    color: ivory;
+    background-color: #740001;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.hp {
+    font-family: 'Jolly Lodger', cursive;
+}
+#title {
+    font-family: "bluu_nextbold", serif;
+    font-size: 40px;
+    text-decoration: none;
+    color: #fcf5e7;
+}
+hr {
+    border-bottom: 3px solid #ffa235;
+}
+.hog-btn {
+    padding: 5px 45px;
+    border-radius: 12px;
+    background-color: #740001;
+    border-color: #740001;
+    color: ivory;
+    box-shadow: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+.hog-input {
+    padding: 8px;
+    margin: 10px 10px;
+    width: 800px;
+    border: 2px solid #740001;
+    border-radius: 10px;
+    font-size: 18px;
+}
+.nav-link {
+    color: inherit;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.nav-link:hover {
+    color:silver;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.category {
+    color: #ffa235;
+    font-size: 18px;
+}
+.category:hover {
+    color:goldenrod;
+    font-size: 18px;
+}
+#hp-fans {
+    max-width: 450px;
+    margin: -65px 0 -65px 0;
+}
+.hr-style {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 3px solid #ffa235; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+ } 
+ 
+.hr-style span { 
+    background: #182f3f;
+    padding:0 10px; 
+}
+#register-list {
+    border-collapse: separate;
+    border-spacing: 100px;
+    margin: 0;
+    padding: 0;
+}
+#register-list td {
+    font-size: 30px;
+    font-weight: bolder;
+    color: #ffa235;
+}
+.cat-link {
+    color: #ffa235;
+    font-size: 18px;
+}
+.cat-link:hover {
+    color: goldenrod;
+    font-size: 18px;
+}

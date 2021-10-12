@@ -1,0 +1,98 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<h2>{{ listing.title }}</h2>
+{% if listing.user == request.user %}
+<p class="desc">(This listing is listed by you!)</p>
+{% endif %}
+<br>
+{% if request.user.is_authenticated %}
+{% if watch %}
+<form action="{% url 'add_watchlist' listing.id %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="watchlist">Remove from Watchlist</button>
+</form>
+{% else %}
+<form action="{% url 'add_watchlist' listing.id %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="watchlist">Add to Watchlist</button>
+</form>
+{% endif %}
+{% else %}
+<p><a href="{% url 'login' %}">Login</a> to add this listing to your Watchlist!</p>
+{% endif %}
+<hr>
+<div>
+    <img src="{{ listing.image }}" alt="{{ listing.title }}" class="listing">
+    <hr>
+</div>
+<br>
+{% if listing.user == request.user %}
+<h2>Starting Bid: ${{ listing.bid }}</h2>
+{% else %}
+<h2>${{ highest_bid }}</h2>
+{% endif %}
+<br>
+<div>
+    <h3>
+        Description
+    </h3>
+    <p class="cursive" style="font-size: 18px;">{{ listing.description }}</p>
+</div>
+<div><br>
+    {% if listing.user == request.user %}
+    <h3>Highest Bid: ${{ highest_bid }}</h3>
+    <br>
+    <form action="{% url 'close' listing.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" class="hog-btn">Close Bidding</button>
+    </form>
+    <br>
+    {% else %}
+    <form action="{% url 'listing' listing.id %}" method="POST">
+        {% csrf_token %}
+        <input type="number" class="hog-input" name='bid_price' placeholder="minimum {{min_bid}}" min="{{min_bid}}">
+        <button type="submit" class="hog-btn">Place Bid</button>
+    </form>
+    {% endif %}
+    {% if bid.user == request.user %}
+    <p>your bid is the current bid!</p>
+    {% endif %}
+</div>
+<div>
+    <h3>Details</h3>
+    <ul>
+        {% if listing.user == request.user %}
+        <li>Listed by you on {{ listing.date }}</li>
+        {% else %}
+        <li>Listed by {{ listing.user }} on {{ listing.date }}</li>
+        {% endif %}
+        <li><b>Category: </b>{{ listing.category }}</li>
+    </ul>
+</div>
+<div>
+    <h3>Comments</h3>
+    {% if request.user.is_authenticated %}
+    <form action="{% url 'listing' listing.id %}" method="POST">
+        {% csrf_token %}
+        <input type="text" class="hog-input" placeholder="Add comment" name="comment">
+        <button type="submit" class="hog-btn">Post</button>
+    </form>
+    {% else %}
+    <p><a href="{% url 'login' %}">Login</a> to comment on listings.</p>
+    {% endif %}
+    <br>
+    <hr>
+    {% for comment in comments %}
+    <table style="margin: 5px;">
+        <tr>
+            <td style="color:#ffa235;"><strong style="font-size: 18px;">{{ comment.user }}:</strong></td>
+
+            <td><p class="cursive" style="font-size: 18px;">{{ comment.comment }}</p></td>
+        </tr>
+    </table>
+    <p style="text-align:right" class="cursive">{{ comment.time }}</p>
+    <hr>
+    {% endfor %}
+</div>
+{% endblock %}

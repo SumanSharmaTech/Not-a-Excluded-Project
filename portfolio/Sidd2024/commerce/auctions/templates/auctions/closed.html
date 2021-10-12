@@ -1,0 +1,40 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+<h1>Closed Listings</h1>
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
+{% for list in lists %}
+<table>
+    <tr>
+        <td><img src="{{ list.image }}" alt="{{ list.title }}"></td>
+        {% if list.owner == request.user %}
+        <td><strong>{{ list.title }}<br>
+            Winner's bid: {{ list.winprice }}<br></strong>
+            <p>Listed by you!</p>
+        </td>
+        {% else %}
+        <td><strong><p style="font-size: 28px;">{{ list.title }}</p><br>
+            Winner's bid: {{ list.winprice }}<br></strong>
+            <p>Listed by {{ list.owner }}</p>
+        </td>
+        {% endif %}
+        <td style="font-size: 28px;">
+            <p style="color: #ffa235;">
+        {% if list.winner == request.user.username %}
+            You are the Winner for this listing Congratulations!</p>
+        {% else %}
+            <strong>WINNER: </strong>       
+                {{ list.winner }}
+            </p>
+        {% endif %}
+        </td>
+    </tr>
+</table>
+<hr>
+{% endfor %}
+
+{% endblock %}
