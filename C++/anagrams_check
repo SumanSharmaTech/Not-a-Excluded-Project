@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std ;
+int main(){
+    
+    string one;
+    string two ;
+    cin>>one>>two ;
+    sort(one.begin(),one.end()) ;
+    sort(two.begin(),two.end()) ;
+    
+
+    if(one.size()==two.size()){
+        
+        int count =0 ;
+        for(int i=0;i<one.size();i++){
+            if(one[i]==two[i]){
+                count++ ;
+            }
+        }
+        if(count==one.size()){
+            cout<<"true" ;
+        }else{
+            cout<<"false" ;
+        }
+        
+
+    }else{
+        cout<<"false" ;
+    }
+
+
+}
